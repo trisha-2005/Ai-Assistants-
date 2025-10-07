@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #000 url("./images/Images/ai\ image.jpg") no-repeat center center;
+    background-size: contain;  /* keeps image sharp, no stretch */
+    background-attachment: fixed;
+}
+.container {
+  position: absolute;
+  top: 43%;          /* Adjust this to align vertically with the robot's finger */
+  left: 57%;         /* Moves box near the robot's hand — tweak between 50%–60% */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 80px;
+  border-radius: 15px;
+  text-align: center;
+  color: black;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+
+}
+
+p {
+    font-size: 1.1rem;
+    color: #ff9800;
+    margin-bottom: 25px;
+}
+
+/* Button Styling */
+#listen-btn {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      border: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+    }
+
+    #listen-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
+    }
+
+/* Listening Pulse Effect */
+ #listen-btn.listening {
+      background: linear-gradient(135deg, #ff004c, #ff7b00);
+      box-shadow: 0 0 25px rgba(255, 100, 100, 0.8),
+                  0 0 50px rgba(255, 0, 0, 0.4);
+      animation: pulse 1.5s infinite;
+    }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
